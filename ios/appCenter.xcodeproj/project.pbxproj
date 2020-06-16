@@ -17,6 +17,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* appCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* appCenterTests.m */; };
+		8BD40E1A2499306600146540 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BD40E192499306600146540 /* AppCenter-Config.plist */; };
 		8C9AA4FBFDBC3FBFE3BF3423 /* libPods-appCenter-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF1B6F3EF9BE83A7E8FFAC0 /* libPods-appCenter-tvOSTests.a */; };
 		B0BE59A9A00B88EB0ADBEEE4 /* libPods-appCenter-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 516283762CA17D3156AEA230 /* libPods-appCenter-tvOS.a */; };
 		FCFC294780AE3E203BBF77FF /* libPods-appCenter-appCenterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25408EA7449DE218041FB82D /* libPods-appCenter-appCenterTests.a */; };
@@ -60,6 +61,7 @@
 		5AF1B6F3EF9BE83A7E8FFAC0 /* libPods-appCenter-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appCenter-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B70ABFBDB41BA333242D030 /* Pods-appCenter-appCenterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appCenter-appCenterTests.release.xcconfig"; path = "Target Support Files/Pods-appCenter-appCenterTests/Pods-appCenter-appCenterTests.release.xcconfig"; sourceTree = "<group>"; };
 		72F5364FC39DB917299FD257 /* Pods-appCenter-appCenterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appCenter-appCenterTests.debug.xcconfig"; path = "Target Support Files/Pods-appCenter-appCenterTests/Pods-appCenter-appCenterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8BD40E192499306600146540 /* AppCenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 		A4C41A426B78E95C3247D4AD /* Pods-appCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appCenter.debug.xcconfig"; path = "Target Support Files/Pods-appCenter/Pods-appCenter.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A0EDDF215389435A2C45EC /* Pods-appCenter-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appCenter-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-appCenter-tvOSTests/Pods-appCenter-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D39A90541963F3D641F3209D /* Pods-appCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appCenter.release.xcconfig"; path = "Target Support Files/Pods-appCenter/Pods-appCenter.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				8BD40E192499306600146540 /* AppCenter-Config.plist */,
 			);
 			name = appCenter;
 			sourceTree = "<group>";
@@ -161,7 +164,6 @@
 				D1A0EDDF215389435A2C45EC /* Pods-appCenter-tvOSTests.debug.xcconfig */,
 				D7E99667A307416EDA2F5C2E /* Pods-appCenter-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -340,6 +342,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				8BD40E1A2499306600146540 /* AppCenter-Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
