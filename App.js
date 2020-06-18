@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {NativeModules, Platform} from 'react-native';
 import Feed from './src/feed';
 import Detail from './src/detail';
 
@@ -9,6 +10,9 @@ import Screen3 from './src/screens/drawer/screen3';
 import Tab1 from './src/screens/tabs/Tab1';
 import Tab2 from './src/screens/tabs/Tab2';
 import Tab3 from './src/screens/tabs/Tab3';
+
+import Splash from 'react-native-splash-screen';
+import {useAppState} from './src/shared/hooks';
 
 import {
   NavigationContainer,
@@ -29,6 +33,22 @@ const MaterialTopTabs = createMaterialTopTabNavigator();
 
 const App = () => {
   const colorScheme = useColorScheme();
+
+  const hideSplash = () => {
+    if (Platform.OS === 'ios') {
+      const AppSplash = NativeModules.AppSplash;
+      console.log('AppSplash ', AppSplash);
+      AppSplash.hide();
+    }
+    Splash.hide();
+  };
+
+  // useEffect(() => {
+  //   hideSplash();
+  //   console.log('App start');
+  // }, []);
+
+  useAppState(hideSplash);
 
   const MyTheme = {
     dark: false,

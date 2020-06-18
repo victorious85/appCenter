@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "AppSplash.h"
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -28,6 +29,9 @@ static void InitializeFlipper(UIApplication *application) {
 
 @implementation AppDelegate
 
+UIImageView *imageView;
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [AppCenterReactNative register];
@@ -50,7 +54,24 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
   return YES;
+}
+
+-(void)applicationWillResignActive:(UIApplication *)application
+{
+  imageView = [[UIImageView alloc]initWithFrame:[self.window frame]];
+  [imageView setImage:[UIImage imageNamed:@"GradientLaunchScreen.png"]];
+  imageView.contentMode = UIViewContentModeScaleAspectFill;
+  [self.window addSubview:imageView];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    if(imageView != nil) {
+        [imageView removeFromSuperview];
+        imageView = nil;
+    }
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
