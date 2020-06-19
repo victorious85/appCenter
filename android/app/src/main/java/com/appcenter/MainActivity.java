@@ -1,6 +1,9 @@
 package com.appcenter;
 
 import com.facebook.react.ReactActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +15,15 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "appCenter";
   }
+
+      @Override
+      protected void onCreate(Bundle savedInstanceState) {
+          super.onCreate(savedInstanceState);
+          getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+                  WindowManager.LayoutParams.FLAG_SECURE);
+
+          View v = findViewById(android.R.id.content);
+          v.setFilterTouchesWhenObscured(true);
+      }
+
 }

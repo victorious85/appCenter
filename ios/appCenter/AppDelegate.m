@@ -28,6 +28,7 @@ static void InitializeFlipper(UIApplication *application) {
 #endif
 
 @implementation AppDelegate
+UIImageView *imageView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -52,6 +53,22 @@ static void InitializeFlipper(UIApplication *application) {
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
+}
+
+-(void)applicationWillResignActive:(UIApplication *)application
+{
+  imageView = [[UIImageView alloc]initWithFrame:[self.window frame]];
+  [imageView setImage:[UIImage imageNamed:@"GradientLaunchScreen.png"]];
+  imageView.contentMode = UIViewContentModeScaleAspectFill;
+  [self.window addSubview:imageView];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    if(imageView != nil) {
+        [imageView removeFromSuperview];
+        imageView = nil;
+    }
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
