@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react';
-import {NativeModules, Platform} from 'react-native';
+import React from 'react';
 import Feed from './src/feed';
 import Detail from './src/detail';
 
@@ -11,19 +10,15 @@ import Tab1 from './src/screens/tabs/Tab1';
 import Tab2 from './src/screens/tabs/Tab2';
 import Tab3 from './src/screens/tabs/Tab3';
 
-import Splash from 'react-native-splash-screen';
-import {useAppState} from './src/shared/hooks';
-
 import {
   NavigationContainer,
   DarkTheme,
   DrawerActions,
 } from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator, HeaderBackButton} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useColorScheme, AppearanceProvider} from 'react-native-appearance';
 
 const Drawer = createDrawerNavigator();
@@ -33,23 +28,6 @@ const MaterialTopTabs = createMaterialTopTabNavigator();
 
 const App = () => {
   const colorScheme = useColorScheme();
-
-  const hideSplash = () => {
-    if (Platform.OS === 'ios') {
-      const AppSplash = NativeModules.AppSplash;
-      console.log('AppSplash ', AppSplash);
-      AppSplash.hide();
-    }
-    Splash.hide();
-  };
-
-  // useEffect(() => {
-  //   hideSplash();
-  //   console.log('App start');
-  // }, []);
-
-  useAppState(hideSplash);
-
   const MyTheme = {
     dark: false,
     colors: {
@@ -69,11 +47,11 @@ const App = () => {
         options={({navigation}) => ({
           title: 'React Navigation',
           headerLeft: () => (
-            <Icon
+            <HeaderBackButton
+              label={'Menu'}
               onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
               style={[{color: 'white', marginLeft: 8}]}
               size={24}
-              name={'menu'}
             />
           ),
         })}
@@ -122,9 +100,6 @@ const App = () => {
           component={Tab1}
           options={{
             tabBarLabel: 'Home',
-            tabBarIcon: () => (
-              <Icon style={[{color: 'white'}]} size={25} name={'home'} />
-            ),
           }}
         />
         <MaterialBottomTabs.Screen
@@ -132,9 +107,6 @@ const App = () => {
           component={Tab2}
           options={{
             tabBarLabel: 'Profile',
-            tabBarIcon: () => (
-              <Icon style={[{color: 'white'}]} size={25} name={'human'} />
-            ),
           }}
         />
         <MaterialBottomTabs.Screen
@@ -142,9 +114,6 @@ const App = () => {
           component={Tab3}
           options={{
             tabBarLabel: 'Map',
-            tabBarIcon: () => (
-              <Icon style={[{color: 'white'}]} size={25} name={'map'} />
-            ),
           }}
         />
       </MaterialBottomTabs.Navigator>
