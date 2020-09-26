@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React from 'react';
+import {Text} from 'react-native';
 
 import {styles} from '../../styles/styles.js';
+import {Container} from './screen1.styled';
 
 const Screen1 = () => (
-  <View style={styles.center}>
+  <Container>
     <Text style={styles.title}>Contacts</Text>
-  </View>
+  </Container>
 );
 
 export default Screen1;
